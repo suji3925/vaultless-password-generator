@@ -1,5 +1,6 @@
 # 🔐 Vaultless: Deterministic Password Generator
 
+### 🌐 [Click Here to Open the Live App](https://suji3925.github.io/vaultless-password-generator/)
 A privacy-focused password generator that eliminates the need for storing passwords.  
 Instead of saving passwords in a database, this system generates strong, unique passwords every time using a master key and contextual inputs.
 
