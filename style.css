@@ -1,0 +1,118 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent: #38bdf8;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --success: #10b981;
+    --text: #f8fafc;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-wrapper {
+    display: flex;
+    max-width: 950px;
+    width: 95%;
+    gap: 25px;
+}
+
+.sidebar {
+    flex: 1;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent);
+}
+
+.sidebar h3 { color: var(--accent); margin-top: 0; }
+.sidebar ul { padding-left: 18px; font-size: 0.9rem; color: #94a3b8; line-height: 1.8; }
+
+.container {
+    flex: 1.6;
+    background: var(--card);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.input-group { margin-bottom: 15px; position: relative; }
+label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: #94a3b8; }
+
+.pass-field { position: relative; display: flex; align-items: center; }
+.pass-field i { position: absolute; right: 15px; cursor: pointer; color: #94a3b8; transition: 0.3s; }
+.pass-field i:hover { color: var(--accent); }
+
+input {
+    width: 100%;
+    padding: 14px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+button#generateBtn {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.2s;
+}
+
+button#generateBtn:active { transform: scale(0.98); }
+
+.concept-note { font-size: 0.75rem; color: #64748b; text-align: center; margin-top: 10px; }
+
+.output-label { font-size: 0.8rem; color: var(--accent); font-weight: bold; }
+
+.output-box {
+    margin-top: 5px;
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px dashed var(--accent);
+}
+
+#passwordOutput { font-family: 'Courier New', Courier, monospace; font-size: 1.2rem; letter-spacing: 1px; }
+
+#copyBtn { width: auto; background: #334155; color: white; padding: 6px 12px; font-size: 0.7rem; }
+
+.meter-wrapper { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+.meter { flex-grow: 1; height: 6px; background: #334155; margin-right: 15px; border-radius: 10px; overflow: hidden; }
+#strengthBar { height: 100%; width: 0%; transition: 0.5s ease-in-out; }
+#strengthText { font-size: 0.8rem; font-weight: bold; width: 60px; text-align: right; }
+
+#attackSim { font-size: 0.8rem; color: #94a3b8; margin-top: 12px; }
+
+.security-footer {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #334155;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.algo-tag { color: var(--accent); font-weight: bold; margin-top: 5px; }
+
+.warning { color: var(--danger); font-size: 0.75rem; display: none; margin-top: 5px; }

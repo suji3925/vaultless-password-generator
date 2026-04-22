@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaultless Pro | Deterministic Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <h3>🛡️ Security Tips</h3>
+            <ul id="tipsList">
+                <li>✅ Use different website names to generate unique passwords.</li>
+                <li>✅ Never share your master password with anyone.</li>
+                <li>✅ This system is "Stateless"—it does not store any data.</li>
+                <li>✅ Uses PBKDF2-style stretching (1000 rounds) for safety.</li>
+            </ul>
+            <div class="lang-box">
+                <label>Interface Language:</label>
+                <select id="langSelector">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="es">Spanish</option>
+                </select>
+            </div>
+        </aside>
+
+        <main class="container">
+            <h2 id="ui-title">Deterministic Password Generator</h2>
+            
+            <div class="input-group">
+                <label id="ui-master">Master Password</label>
+                <div class="pass-field">
+                    <input type="password" id="masterPwd" placeholder="Enter your unique secret key" oninput="validateInput()">
+                    <i class="fa-solid fa-eye" id="togglePass"></i>
+                </div>
+                <span id="warningText" class="warning">⚠️ Common password! Change it for safety.</span>
+            </div>
+
+            <div class="input-group">
+                <label id="ui-site">Website/App Name</label>
+                <input type="text" id="siteName" placeholder="e.g. Gmail, Instagram">
+            </div>
+
+            <div class="input-group">
+                <label id="ui-hint">Secret Hint</label>
+                <input type="text" id="hint" placeholder="e.g. 2024, blue-room">
+            </div>
+
+            <button id="generateBtn">Generate Password</button>
+            <p class="concept-note">ℹ️ Same inputs always generate the same password. No data is stored.</p>
+
+            <div class="result-area">
+                <label class="output-label">Generated Password:</label>
+                <div class="output-box">
+                    <span id="passwordOutput">********</span>
+                    <button id="copyBtn">Copy</button>
+                </div>
+                
+                <div class="meter-wrapper">
+                    <div class="meter"><div id="strengthBar"></div></div>
+                    <span id="strengthText"></span>
+                </div>
+                
+                <p id="attackSim">Crack Time Estimation: --</p>
+                
+                <div class="security-footer">
+                     <p>⚠️ <strong>IMPORTANT:</strong> Use this password during account registration. Losing your master password means you cannot recover generated passwords.</p>
+                    <p class="algo-tag">Algorithm: SHA-256 + Key Stretching (1000 Iterations)</p>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
